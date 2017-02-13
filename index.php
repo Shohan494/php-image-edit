@@ -14,11 +14,13 @@ Image::configure(array('driver' => 'imagick'));
 $image = Image::make('image/img.jpg');
 $edited = Image::make('image/img.jpg');
 
-$edited->resize(800, 650);
 
+//edited the image
+$edited->resize(800, 650);
 //$edited->rotate(-45);
 $image->insert($edited, 'center');
 
+//saved the image
 $image->save('edited/img.jpg');
 echo $image->response();
 
